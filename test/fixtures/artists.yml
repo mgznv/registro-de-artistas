@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_artista: MyString
+  semblanza: MyText
+  telefono: MyString
+  email: MyString
+  banco: MyString
+  numero_de_cuenta: MyString
+  titulo_de_la_obra: MyString
+  medida: MyString
+  precio_estimado: MyString
+  precio_de_salida: MyString
+  porcentaje_de_donacion: MyString
+
+two:
+  nombre_artista: MyString
+  semblanza: MyText
+  telefono: MyString
+  email: MyString
+  banco: MyString
+  numero_de_cuenta: MyString
+  titulo_de_la_obra: MyString
+  medida: MyString
+  precio_estimado: MyString
+  precio_de_salida: MyString
+  porcentaje_de_donacion: MyString

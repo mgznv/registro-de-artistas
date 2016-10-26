@@ -1,0 +1,48 @@
+%p#notice= notice
+.row
+  .col.s12.m7.offset-m2
+    .card
+      .card-image
+        = image_tag @artist.imagen.url(:medium)
+        %span.card-title 
+          = @artist.nombre_artista
+      .card-content
+        %p
+          = @artist.semblanza
+        %p
+          %strong Telefono:
+          = @artist.telefono
+        %p
+          %strong Email:
+          = @artist.email
+        %p
+          %strong Banco:
+          = @artist.banco
+        %p
+          %strong Numero de cuenta:
+          = @artist.numero_de_cuenta
+        %p
+          %strong Titulo de la obra:
+          = @artist.titulo_de_la_obra
+        %p
+          %strong Medida:
+          = @artist.medida
+        %p
+          %strong Precio estimado:
+          = @artist.precio_estimado
+        %p
+          %strong Precio de salida:
+          = @artist.precio_de_salida
+        %p
+          %strong Porcentaje de donacion:
+          = @artist.porcentaje_de_donacion
+
+
+
+      .card-action
+        %a{:href => "#"} Imprimir a PDF
+        = link_to 'Editar', edit_artist_path(@artist), :class => "btn white-text"
+        |
+        \#{link_to 'Atras', artists_path, :class => "btn white-text"}
+
+

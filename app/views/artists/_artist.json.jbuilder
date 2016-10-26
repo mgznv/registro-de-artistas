@@ -1,0 +1,2 @@
+json.extract! artist, :id, :nombre_artista, :semblanza, :telefono, :email, :banco, :numero_de_cuenta, :titulo_de_la_obra, :medida, :precio_estimado, :precio_de_salida, :porcentaje_de_donacion, :created_at, :updated_at
+json.url artist_url(artist, format: :json)

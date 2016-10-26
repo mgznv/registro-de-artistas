@@ -1,0 +1,6 @@
+.container.grey-text.text-lighten-1	
+	%h1 Editar Artista
+	= render 'form'
+	= link_to 'Detalles', @artist, :class => "btn grey white-text"
+	|
+	\#{link_to 'Atras', artists_path, :class => "btn grey white-text"}

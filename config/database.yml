@@ -1,0 +1,22 @@
+
+default: &default  
+  pool: 5
+  timeout: 5000
+
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  username: postgres
+  password: xcYsatXvZd
+
+development:  
+  <<: *default
+  database: heroku_app
+
+test:  
+  <<: *default
+  database: proyecto_test
+
+production:  
+  <<: *default
+  database: proyecto_prod

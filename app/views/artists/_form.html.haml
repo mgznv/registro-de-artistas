@@ -1,0 +1,57 @@
+= form_for @artist, html: { multipart: true } do |f|
+  - if @artist.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@artist.errors.count, "error")
+        prohibited this artist from being saved:
+      %ul
+        - @artist.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.file_field :imagen
+  .field
+    = f.label :nombre_artista
+    %br/
+    = f.text_field :nombre_artista
+  .field
+    = f.label :semblanza
+    %br/
+    = f.text_area :semblanza
+  .field
+    = f.label :telefono
+    %br/
+    = f.text_field :telefono
+  .field
+    = f.label :email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :banco
+    %br/
+    = f.text_field :banco
+  .field
+    = f.label :numero_de_cuenta
+    %br/
+    = f.text_field :numero_de_cuenta
+  .field
+    = f.label :titulo_de_la_obra
+    %br/
+    = f.text_field :titulo_de_la_obra
+  .field
+    = f.label :medida
+    %br/
+    = f.text_field :medida
+  .field
+    = f.label :precio_estimado
+    %br/
+    = f.text_field :precio_estimado
+  .field
+    = f.label :precio_de_salida
+    %br/
+    = f.text_field :precio_de_salida
+  .field
+    = f.label :porcentaje_de_donacion
+    %br/
+    = f.text_field :porcentaje_de_donacion
+  .actions
+    = f.submit class: 'btn', value: "Aceptar"

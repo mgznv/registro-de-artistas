@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #necesario para la gema devise
+  config.action_mailer.default_url_options = { host: 'https://immense-meadow-43035.herokuapp.com/' }
 end

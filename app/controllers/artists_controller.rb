@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy, :imagen]
-
+  before_action :authenticate_user!, only: [:show, :edit, :destroy, :new]
   # GET /artists
   # GET /artists.json
   def index

@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy, :imagen]
   before_action :authenticate_user!
+
   # GET /artists
   # GET /artists.json
   def index
@@ -69,6 +70,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:nombre_artista, :semblanza, :telefono, :email, :banco, :numero_de_cuenta, :titulo_de_la_obra, :medida, :precio_estimado, :precio_de_salida, :porcentaje_de_donacion, :imagen)
+      params.require(:artist).permit(:nombre_artista, :semblanza, :telefono, :email, :banco, :numero_de_cuenta, :titulo_de_la_obra, :medida, :precio_estimado, :precio_de_salida, :porcentaje_de_donacion, :imagen, :admin)
     end
 end

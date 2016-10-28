@@ -7,6 +7,7 @@
       %ul
         - @artist.errors.full_messages.each do |message|
           %li= message
+    = attachinary_file_field_tag 'artist[image]', @artist, :image
   .field
     = f.file_field :imagen
   .field

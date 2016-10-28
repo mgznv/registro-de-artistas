@@ -19,6 +19,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production 
 gem 'thin' 
 gem 'aws-sdk', '~> 2.0'
+gem 'fog'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 
 

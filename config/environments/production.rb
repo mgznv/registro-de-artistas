@@ -78,9 +78,9 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #necesario para la gema devise
-  cconfig.action_mailer.default_url_options = { host: 'https://immense-meadow-43035.herokuapp.com/', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://immense-meadow-43035.herokuapp.com/', port: 3000 }
 
-  #Configurando paperclip para que suba las imagenes a amazon s3 por defecto
+  #Configurando paperclip para que suba las imagenes a amazon s3 por
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {

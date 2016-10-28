@@ -1,0 +1,22 @@
+.row
+  .col.s12.m4.offset-m4
+    %h5.grey-text Crear Cuenta
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        = f.label :email, "Correo Electronico"
+        %br/
+        = f.email_field :email, autofocus: true
+      .field
+        = f.label :password, "Contraseña"
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} caracteres minimo)
+        %br/
+        = f.password_field :password, autocomplete: "off"
+      .field
+        = f.label :password_confirmation, "Confirma tu contraseña"
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off"
+      .actions
+        = f.submit "Aceptar", :class => "btn indigo lighten-5 grey-text"

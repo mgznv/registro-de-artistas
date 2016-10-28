@@ -3,18 +3,26 @@
   %head
     %title ALTER
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %link{:src => "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css", :rel => "stylesheet"}/
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     %nav.white.lighten-5
-      .nav-wrapper
-        %span.brand-logo.grey-text
-          =image_tag "http://fundacionalter.com/images/04.png"
-        %ul.right
-          %li
-            = link_to "Iniciar Sesion", new_user_session_path, :class => "grey-text"
-          %li
-            = link_to "Editar Usuario", edit_user_registration_path, :class => "grey-text"
+      .container
+        .nav-wrapper
+          %span.brand-logo.grey-text
+            =image_tag "http://fundacionalter.com/images/04.png"
+          %ul.right
+            - if user_signed_in?
+              %li
+                = link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, :class => "grey-text"
+              %li
+                = link_to "Editar Usuario", edit_user_registration_path, :class => "grey-text"
+            - else
+              %li
+                = link_to "Iniciar Sesion", new_user_session_path, :class => "grey-text"
+              %li
+                = link_to "Registrarse", new_user_registration_path, :class => "grey-text"
     %p.notice
       = notice
     %p.alert

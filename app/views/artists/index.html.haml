@@ -14,9 +14,10 @@
             %p= artist.telefono
             %p= artist.email
           .card-action
-            %a= link_to 'Detalles', artist, :class => "btn white-text indigo lighten-3"
-            %a= link_to 'Editar', edit_artist_path(artist), :class => "btn white-text indigo lighten-3"
-            %a= link_to 'Eliminar', artist, :class => "btn white-text indigo lighten-3", method: :delete, data: { confirm: 'Estas seguro de borrar este artista?'}
+            %a= link_to 'Detalles', artist, :class => "orange-text"
+            - if user_signed_in?
+              %a= link_to 'Editar', edit_artist_path(artist), :class => "orange-text"
+              %a= link_to 'Eliminar', artist, :class => "red-text", method: :delete, data: { confirm: 'Estas seguro de borrar este artista?'}
 
 
 .row

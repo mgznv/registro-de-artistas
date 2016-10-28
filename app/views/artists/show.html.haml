@@ -42,8 +42,11 @@
 
       .card-action
         %a{:href => "#"} Imprimir a PDF
-        = link_to 'Editar', edit_artist_path(@artist), :class => "btn white-text"
-        |
-        \#{link_to 'Atras', artists_path, :class => "btn white-text"}
+        - if user_signed_in?
+          = link_to 'Editar', edit_artist_path(@artist), :class => "btn white-text"
+          |
+          \#{link_to 'Atras', artists_path, :class => "btn white-text"}
+        - else
+          = link_to "Atras", artist_path, :class => "orange_text"
 
 

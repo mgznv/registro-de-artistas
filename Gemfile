@@ -20,7 +20,8 @@ gem 'rails_12factor', group: :production
 gem 'thin' 
 gem 'aws-sdk', '~> 2.3'
 gem 'haml', '~> 4.0', '>= 4.0.7'
-
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 
 

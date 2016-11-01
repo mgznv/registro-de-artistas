@@ -11,6 +11,12 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf {
+        render template: "artists/prueba", pdf: "reporte"   # Excluding ".pdf" extension.
+      }
+    end
   end
 
   # GET /artists/new

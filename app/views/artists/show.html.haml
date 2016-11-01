@@ -41,7 +41,7 @@
 
 
       .card-action
-        = link_to "Get PDF", artist_path(format: :pdf)
+        = link_to "Generar PDF", artist_path(format: :pdf)
         - if user_signed_in?
           = link_to 'Editar', edit_artist_path(@artist), :class => "btn white-text"
           |

@@ -1,45 +1,50 @@
-<html>
-<head>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">/</link>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags%>
-  <title>Reporte</title>
-</head>
-<!DOCTYPE html>
-<body>
-  <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-    </ul>
-  </div>
+.row
+  .col.s12.m7.offset-m2
+    .card
+      .card-image
+        = image_tag @artist.imagen.url(:medium)
+        %span.card-title 
+          = @artist.nombre_artista
+      .card-content
+        %p
+          = @artist.semblanza
+        %p
+          %strong Telefono:
+          = @artist.telefono
+        %p
+          %strong Email:
+          = @artist.email
+        %p
+          %strong Banco:
+          = @artist.banco
+        %p
+          %strong Numero de cuenta:
+          = @artist.numero_de_cuenta
+        %p
+          %strong Titulo de la obra:
+          = @artist.titulo_de_la_obra
+        %p
+          %strong Medida:
+          = @artist.medida
+        %p
+          %strong Precio estimado:
+          = @artist.precio_estimado
+        %p
+          %strong Precio de salida:
+          = @artist.precio_de_salida
+        %p
+          %strong Porcentaje de donacion:
+          = @artist.porcentaje_de_donacion
 
-</body>
-</html>
+
+
+      .card-action
+        = link_to "Generar PDF", artist_path(format: :pdf)
+        - if user_signed_in?
+          = link_to 'Editar', edit_artist_path(@artist), :class => "btn white-text"
+          |
+          \#{link_to 'Atras', artists_path, :class => "btn white-text"}
+        - else
+          = link_to "Atras", artist_path, :class => "orange_text"
+
+
